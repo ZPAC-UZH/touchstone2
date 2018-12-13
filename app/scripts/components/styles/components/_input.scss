@@ -1,0 +1,23 @@
+.input {
+  padding-bottom: 0.5rem;
+
+  &__box {
+    background-color: white;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 1.5rem;
+    line-height: 1.5em;
+  }
+
+  &__submit {
+    background-color: white;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1.5em;
+    margin: 0.25rem;
+  }
+
+  &__hidden {
+    display: none;
+  }
+}

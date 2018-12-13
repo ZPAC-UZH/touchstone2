@@ -1,0 +1,48 @@
+$none: none;
+
+.button {
+  &--float-right {
+    float: right;
+  }
+
+  &__text {
+    color: $blue;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+
+    &--grey {
+      color: $light-shade-white;
+    }
+  }
+
+  &__background {
+    background-color: transparent;
+    border: 0.1rem solid $blue;
+    cursor: pointer;
+    outline: none;
+    margin: 0 0.5rem;
+
+    &:hover {
+      background-color: $blue;
+      border: 0.1rem solid $blue;
+
+      .button__text {
+        color: $white;
+      }
+    }
+
+    &--transparent {
+      background-color: transparent;
+      border: 1px solid $light-shade-white-transparent;
+
+      &:hover {
+        background-color: $light-shade-white-transparent;
+        border: 1px solid $light-shade-white-transparent;
+
+        .button__text {
+          color: $light-shade-white;
+        }
+      }
+    }
+  }
+}

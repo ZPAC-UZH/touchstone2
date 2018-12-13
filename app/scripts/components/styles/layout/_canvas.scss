@@ -1,0 +1,28 @@
+.canvas {
+  min-height: 100vh;
+  width: 100vw;
+
+  &__container {
+    align-items: center;
+    display: grid;
+    grid-gap: 1.5rem 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+    justify-items: center;
+    place-content: center center;
+  }
+
+  &__center {
+    place-content: center center;
+  }
+
+  &__header {
+    grid-column-end: -1;
+    grid-column-start: 1;
+    padding-bottom: 5rem;
+  }
+
+  &__item-compare {
+    display: grid;
+    justify-items: center;
+  }
+}

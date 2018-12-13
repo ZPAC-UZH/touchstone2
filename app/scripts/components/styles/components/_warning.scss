@@ -1,0 +1,20 @@
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+.warning {
+  align-items: center;
+  background-color: $warning;
+  bottom: 1rem;
+  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.16), 0 0.3rem 0.6rem rgba(0, 0, 0, 0.23);
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  z-index: 150;
+
+  &__text {
+    color: $warning-text;
+    font-size: 2rem;
+    line-height: 1.5em;
+    padding: 2rem;
+  }
+}

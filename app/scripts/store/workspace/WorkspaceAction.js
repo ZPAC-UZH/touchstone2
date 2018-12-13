@@ -1,0 +1,8 @@
+export const WORKSPACE_BLOCKLY_STYLES_SUCCESS = 'WORKSPACE_BLOCKLY_STYLES_SUCCESS';
+export const WORKSPACE_SET_RAWTSL_SUCCESS = 'WORKSPACE_SET_RAWTSL_SUCCESS';
+
+export const updateBlocklyStyles = (style) => ({
+  type: WORKSPACE_BLOCKLY_STYLES_SUCCESS,
+  style,
+});
+

@@ -1,0 +1,41 @@
+@import url('//fonts.googleapis.com/css?family=Ubuntu:300,400,500');
+
+$font-family-sans-serif: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+body {
+  font-family: $font-family-sans-serif;
+  font-weight: 300;
+}
+
+// short-hand font sizes
+$f-tiny: 0.4rem;
+$f-medium: 1rem;
+$f-medium-large: 1.5rem;
+$f-large: 2rem;
+
+// short hand heading sizes
+$f-header-medium: 1.4rem;
+
+// short hand line heights
+$line-height: 1.3;
+$lh-spacing: 2;
+
+// intendations
+$one-stop: 1.4rem;
+
+// Default Sizes variables
+$font-size-xs: 0.6rem;
+$font-size-sm: 0.8rem;
+$font-size-base: 1.2rem;
+$font-size-lg: 1.6rem;
+
+// Title Font sizes
+$font-size-h1: 3.8rem;
+$font-size-h2: 3rem;
+$font-size-h3: 2.5rem;
+$font-size-h4: 2rem;
+$font-size-h5: 1.8rem;
+$font-size-h6: 1.6rem;
+
+$headings-font-family: 'Ubuntu';
+$headings-font-weight: 700;

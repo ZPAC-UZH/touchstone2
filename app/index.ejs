@@ -1,0 +1,87 @@
+<!--suppress ALL -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title><%= htmlWebpackPlugin.options.title || 'Touchstone 2' %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <meta property="og:title" content="Touchstone 2"/>
+  <meta property="og:description" content=""/>
+  <meta property="og:image" content=""/>
+  <meta property="og:type" content=""/>
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-title" content="Touchstone 2">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#333333">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <link rel="icon" type="image/png" href="%PUBLIC_URL%/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="%PUBLIC_URL%//favicon-32x32.png" sizes="32x32">
+  <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
+  <link rel="mask-icon" href="%PUBLIC_URL%/safari-pinned-tab.svg" color="#5bbad5">
+  <% if (htmlWebpackPlugin.options.baseHref) { %>
+    <base href="<%= htmlWebpackPlugin.options.baseHref %>"/>
+  <% } %>
+  <style type="text/css">.app { opacity: 0; }</style>
+</head>
+<body>
+<div id="react" style="min-height: 100vh;">
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="gooey">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                       result="goo"></feColorMatrix>
+        <feBlend in="SourceGraphic" in2="goo"></feBlend>
+      </filter>
+    </defs>
+  </svg>
+
+</div>
+
+<% if (htmlWebpackPlugin.options.appMountIds && htmlWebpackPlugin.options.appMountIds.length > 0) { %>
+<% for (var index in htmlWebpackPlugin.options.appMountIds) { %>
+<div id="<%= htmlWebpackPlugin.options.appMountIds[index] %>"></div>
+<% } %>
+<% } %>
+
+<% if (htmlWebpackPlugin.options.window) { %>
+<script>
+  <% for (var varName in htmlWebpackPlugin.options.window) { %>
+  window['<%= varName %>'] = <%= JSON.stringify(htmlWebpackPlugin.options.window[varName]) %>;
+  <% } %>
+</script>
+<% } %>
+
+<script>
+  var cb = function() {
+    var l = document.createElement('link');
+    l.rel = 'stylesheet';
+    l.href = '<%= htmlWebpackPlugin.files.css[0] %>';
+    var h = document.getElementsByTagName('head')[0];
+    h.parentNode.insertBefore(l, h);
+  };
+  var raf = window.requestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.msRequestAnimationFrame;
+  if (raf) {
+    raf(cb);
+  }
+  else {
+    window.addEventListener('load', cb);
+  }
+</script>
+
+<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+<script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+<% } %>
+
+<% if (htmlWebpackPlugin.options.googleAnalytics) { %>
+
+<% } %>
+<noscript>
+  <div class="no-script">This website need Javascript. Please turn it on.</div>
+</noscript>
+</body>
+</html>

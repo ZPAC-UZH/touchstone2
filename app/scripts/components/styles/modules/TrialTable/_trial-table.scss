@@ -1,0 +1,160 @@
+$padding: $one-stop;
+$padding-right: 2rem;
+$minHeight: 60vh;
+$simple-margin: 2rem;
+$scale-0: 3.2rem;
+$scale-1: 4.5rem;
+$transitions: all 0ms ease;
+$line-height: 1.8em;
+$margin-fisheye: 1rem;
+$min-width: 5rem;
+
+.full-trial-tables {
+  margin-top: 3rem;
+  padding: 0 1vw;
+
+  &__title-pane {
+    padding: 0.5rem 0;
+  }
+}
+
+.trial-table {
+  &__container {
+    align-items: flex-start;
+    background-color: $light-grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    padding: $padding;
+  }
+
+  &__preview-container {
+    flex: 1;
+    overflow: auto;
+  }
+
+  &__preview {
+    align-items: flex-end;
+    background-color: $light-grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: $padding;
+  }
+
+  &__column-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: $padding-right;
+
+    .trial-table__entry {
+      font-size: $f-medium-large;
+      line-height: $line-height;
+      transition: $transitions;
+      width: $scale-1;
+    }
+  }
+
+  &__entry {
+    font-size: $f-tiny;
+    line-height: $line-height;
+    margin-left: $simple-margin;
+    margin-right: $simple-margin;
+    min-width: $scale-0;
+    text-align: center;
+    transition: $transitions;
+
+    &--fisheye {
+      font-size: $f-medium-large;
+      line-height: $line-height;
+      margin: 0 $margin-fisheye;
+      min-width: $min-width;
+      text-align: center;
+      transition: $transitions;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: $padding-right;
+
+    > .trial-table__row:hover {
+      .trial-table__entry {
+        font-size: 2.2rem;
+        transition: $transitions;
+      }
+    }
+
+    > .trial-table__row:hover + .trial-table__row {
+      .trial-table__entry {
+        font-size: 2rem;
+        transition: $transitions;
+      }
+    }
+
+    > .trial-table__row:hover + .trial-table__row + .trial-table__row {
+      .trial-table__entry {
+        font-size: 1.8rem;
+        transition: $transitions;
+      }
+    }
+
+    > .trial-table__row:hover + .trial-table__row + .trial-table__row + .trial-table__row {
+      .trial-table__entry {
+        font-size: 1.6rem;
+        transition: $transitions;
+      }
+    }
+
+    > .trial-table__row:hover + .trial-table__row + .trial-table__row + .trial-table__row + .trial-table__row {
+      .trial-table__entry {
+        font-size: 1.4rem;
+        transition: $transitions;
+      }
+    }
+
+    > .trial-table__row:hover + .trial-table__row + .trial-table__row + .trial-table__row + .trial-table__row + .trial-table__row {
+      .trial-table__entry {
+        font-size: 1.2rem;
+        transition: $transitions;
+      }
+    }
+  }
+
+  &__row {
+    background-color: $light-grey;
+    display: flex;
+    flex-direction: row;
+
+    &--grey {
+      background-color: $grey;
+    }
+  }
+
+  &__selected {
+    background-color: $highlight;
+  }
+
+  &__header {
+    align-items: center;
+    background-color: $light-grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: $one-stop;
+
+
+    p {
+      font-size: $f-large;
+      margin-bottom: 0;
+    }
+  }
+
+  &__subheader {
+    font-size: $f-medium-large;
+  }
+}

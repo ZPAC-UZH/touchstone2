@@ -1,0 +1,18 @@
+.title-pane {
+  background-color: $dark-grey;
+  position: relative;
+  width: 100%;
+
+  &__text {
+    color: $white;
+    display: inline;
+    font-size: $f-header-medium;
+    line-height: $lh-spacing;
+    margin: 0;
+    padding-left: $one-stop;
+  }
+
+  &__control-buttons {
+    float: right;
+  }
+}

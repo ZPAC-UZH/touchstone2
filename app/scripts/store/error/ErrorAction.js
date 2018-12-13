@@ -1,0 +1,12 @@
+export const WARNING_MESSAGE = 'WARNING_MESSAGE';
+export const SET_WARNING_MESSAGE = 'SET_WARNING_MESSAGE';
+export const RELEASE_WARNING_MESSAGE = 'RELEASE_WARNING_MESSAGE';
+
+export const CRITICAL_MESSAGE = 'CRITICAL_MESSAGE';
+export const SET_CRITICAL_MESSAGE = 'SET_CRITICAL_MESSAGE';
+export const RELEASE_CRITICAL_MESSAGE = 'RELEASE_CRITICAL_MESSAGE';
+
+export const propagateError = (message) => ({
+  type: WARNING_MESSAGE,
+  message,
+});

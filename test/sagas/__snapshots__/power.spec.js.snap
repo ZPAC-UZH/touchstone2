@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PowerAnalysis should have the expected watchers 1`] = `
+Object {
+  "fork": Array [
+    Object {
+      "@@redux-saga/IO": true,
+      "FORK": Object {
+        "args": Array [
+          "POWERANALYSIS_CALCULATE_POWER_START",
+          "@@redux-saga-test-plan/json/function/calculatePowerForAllDesigns",
+        ],
+        "context": null,
+        "fn": "@@redux-saga-test-plan/json/function/takeEvery",
+      },
+    },
+    Object {
+      "@@redux-saga/IO": true,
+      "FORK": Object {
+        "args": Array [
+          "POWERANALYSIS_UPDATE_EFFECT_SIZE_START",
+          "@@redux-saga-test-plan/json/function/updateEffectSizeForDesign",
+        ],
+        "context": null,
+        "fn": "@@redux-saga-test-plan/json/function/takeEvery",
+      },
+    },
+    Object {
+      "@@redux-saga/IO": true,
+      "FORK": Object {
+        "args": Array [
+          "POWERANALYSIS_CALCULATE_POWER_MARGIN_START",
+          "@@redux-saga-test-plan/json/function/calculateMarginForDesign",
+        ],
+        "context": null,
+        "fn": "@@redux-saga-test-plan/json/function/takeEvery",
+      },
+    },
+    Object {
+      "@@redux-saga/IO": true,
+      "FORK": Object {
+        "args": Array [
+          "POWERANALYSIS_UPDATE_MARGIN_FOR_DESIGN_START",
+          "@@redux-saga-test-plan/json/function/updateMarginForDesign",
+        ],
+        "context": null,
+        "fn": "@@redux-saga-test-plan/json/function/takeEvery",
+      },
+    },
+  ],
+  "take": Array [
+    Object {
+      "@@redux-saga/IO": true,
+      "TAKE": Object {
+        "pattern": "POWERANALYSIS_CALCULATE_POWER_START",
+      },
+    },
+    Object {
+      "@@redux-saga/IO": true,
+      "TAKE": Object {
+        "pattern": "POWERANALYSIS_UPDATE_EFFECT_SIZE_START",
+      },
+    },
+    Object {
+      "@@redux-saga/IO": true,
+      "TAKE": Object {
+        "pattern": "POWERANALYSIS_CALCULATE_POWER_MARGIN_START",
+      },
+    },
+    Object {
+      "@@redux-saga/IO": true,
+      "TAKE": Object {
+        "pattern": "POWERANALYSIS_UPDATE_MARGIN_FOR_DESIGN_START",
+      },
+    },
+  ],
+}
+`;

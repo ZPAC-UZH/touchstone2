@@ -1,0 +1,45 @@
+.power-analysis {
+  &__measurements-table {
+    padding: 1rem 0;
+
+    .trial-table__row {
+      justify-content: flex-start;
+      padding: 0.1rem 0;
+
+      .trial-table__entry {
+        font-size: 1.2rem;
+        margin-left: 0;
+        min-width: 30%;
+        word-break: break-all;
+      }
+
+      .react-numeric-input b {
+        display: none;
+      }
+    }
+  }
+}
+
+.line {
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+.line-path {
+  //stroke-linejoin: round;
+  //stroke-linecap: round;
+  //mix-blend-mode: multiply;
+}
+
+.lineOrders {
+  fill: none;
+
+  /* shape-rendering: crispEdges; */
+  stroke: red;
+  stroke-width: 2px;
+}
+
+.number-input {
+  width: 100px;
+}
+

@@ -1,0 +1,88 @@
+$border-color: $dark-grey;
+$hover-color: $dark-grey;
+
+.v-list {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  &__date {
+    font-size: 0.8rem;
+    left: -3.5rem;
+    opacity: 0;
+    position: absolute;
+    top: -1.8rem;
+    width: 20rem;
+
+    &:before {
+      color: #16a085;
+      content: '[';
+      left: 0;
+    }
+
+    &:after {
+      color: #16a085;
+      content: ']';
+      position: absolute;
+    }
+  }
+
+  &__center {
+    align-items: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__indicator {
+    background-color: $border-color;
+    border-radius: 0.5rem;
+    height: 4rem;
+    margin: 0.1rem 0.1rem 2rem 0.1rem;
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    transition: all 150ms ease-in;
+    width: 0.1rem;
+
+    &--red {
+      background-color: $red;
+    }
+  }
+
+  &__element {
+    cursor: grab;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+    position: relative;
+
+    &--grabbing {
+      cursor: grabbing;
+    }
+
+    &:hover {
+      .annotation {
+        border-radius: 1rem;
+        //        margin: 0 0.1rem 0.1rem 0.1rem;
+        width: 2rem;
+      }
+
+      .v-list__indicator {
+        background-color: $blue-light;
+        height: 2.5rem;
+        margin: 0.1rem 0.5rem 3.5rem 0.5rem;
+        width: 0.7rem;
+
+        &--red {
+          background-color: $red;
+        }
+      }
+
+      .v-list__date {
+        opacity: 1;
+      }
+    }
+  }
+}

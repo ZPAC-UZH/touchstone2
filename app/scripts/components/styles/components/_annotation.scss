@@ -1,0 +1,29 @@
+.annotation {
+  cursor: pointer;
+  height: 1rem;
+  margin-bottom: 0.5rem;
+  transition: all 150ms ease-in;
+  width: 0.5rem;
+
+  &__text {
+    font-size: 1.5rem;
+    left: -3.5rem;
+    opacity: 0;
+    position: absolute;
+    top: -3.5rem;
+    width: 40rem;
+  }
+
+  &__input {
+    background-color: $white;
+    position: absolute;
+    top: -6rem;
+    z-index: 100;
+  }
+
+  &:hover {
+    .annotation__text {
+      opacity: 1;
+    }
+  }
+}

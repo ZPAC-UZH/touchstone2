@@ -1,0 +1,44 @@
+.toolbar {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 2rem 1rem 1rem;
+  width: 75vw;
+
+  &__border {
+    border: 0.1rem solid black;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  &__element {
+    height: 2.5rem;
+    margin: 0.25rem;
+    width: 2.5rem;
+
+    &--layers {
+      background: $icon-layers no-repeat 50%;
+      background-size: contain;
+
+      &:hover {
+        background: $icon-layers-blue no-repeat 50%;
+        background-size: contain;
+        transition: all 250ms ease-in;
+      }
+    }
+
+    &--eye {
+      background: $icon-eye no-repeat 50%;
+      background-size: contain;
+
+      &:hover {
+        background: $icon-eye-blue no-repeat 50%;
+        background-size: contain;
+        transition: all 250ms ease-in;
+
+      }
+    }
+  }
+}
+

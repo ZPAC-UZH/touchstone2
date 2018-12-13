@@ -1,0 +1,45 @@
+.icon {
+  height: 2.5rem;
+  transition: all 450ms ease-in-out;
+  width: 2.5rem;
+
+  &__scale-hover {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__rotate {
+    transform: rotate(180deg);
+  }
+
+  &__history {
+    background: $history no-repeat 50%;
+    background-size: contain;
+
+    &:hover {
+      background: $history-blue no-repeat 50%;
+      background-size: contain;
+    }
+  }
+
+  &__circle {
+    background: $circle no-repeat 50%;
+    background-size: contain;
+  }
+
+  &__close {
+    background: $close no-repeat 50%;
+    background-size: contain;
+  }
+}
+
+.image {
+  &__help {
+    background: $history_flow no-repeat 50%;
+    background-color: white;
+    background-size: cover;
+    height: 80rem;
+    width: 50rem;
+  }
+}

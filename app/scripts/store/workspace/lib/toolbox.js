@@ -1,0 +1,8 @@
+const boxOfTools = {
+
+
+  template: '<xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;"><category name="Add Brick" colour="#4d24da"><block type="design"><field name="designName">Design Name</field><field name="designColor">#ffff00</field><field name="numberOfParticipants">1</field><field name="intertrialTime">2</field><field name="interblockTime">10</field></block><block type="block"><field name="counterbalancingStrategy">latin</field><field name="replications">1</field><field name="serial">false</field></block><block type="independentvariable"><field name="ivID">IV</field><field name="ivName">Independent Variable</field></block><block type="level"><field name="levelName">Name</field></block></category><category name="Template"><block type="design"><field name="designName">Design Name</field><field name="designColor">#ffff00</field><field name="numberOfParticipants">1</field><field name="intertrialTime">0</field><field name="interblockTime">0</field><statement name="blockInput"><block type="block"><field name="counterbalancingStrategy">latin</field><field name="replications">1</field><field name="serial">false</field><statement name="independentVariables"><block type="independentvariable"><field name="ivID">ID</field><field name="ivName">IV Name</field><statement name="levels"><block type="level"><field name="levelName">Name</field><next><block type="level"><field name="levelName">Name</field><next><block type="level"><field name="levelName">Name</field><next><block type="level"><field name="levelName">Name</field></block></next></block></next></block></next></block></statement></block></statement></block></statement></block></category></xml>',
+
+};
+
+export default {boxOfTools};

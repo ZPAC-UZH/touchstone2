@@ -1,0 +1,24 @@
+.app__header {
+  align-items: center;
+  background: linear-gradient(to bottom, #dedae5 0%, $light-grey 100%);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+
+  p {
+    display: inline;
+    font-size: 1.4rem;
+  }
+
+  &__left {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__right {
+    padding-right: 1rem;
+  }
+}

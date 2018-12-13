@@ -1,0 +1,47 @@
+export const DESIGNS_UPDATE_DESIGNDATA_START = 'DESIGNS_UPDATE_DESIGNDATA_START';
+export const DESIGNS_UPDATE_DESIGNDATA_SUCCESSS = 'DESIGNS_UPDATE_DESIGNDATA_SUCCESSS';
+
+export const DESIGNS_BLOCK_CLICK_START = 'DESIGNS_BLOCK_CLICK_START';
+export const DESIGNS_ISDESIGN_SUCCESS = 'DESIGNS_ISDESIGN_SUCCESS';
+
+export const DESIGNS_FOKUS_TYPE_SUCCESS = 'DESIGNS_FOKUS_TYPE_SUCCESS';
+export const DESIGNS_FOKUS_ID_SUCCESS = 'DESIGNS_FOKUS_ID_SUCCESS';
+
+export const DESIGNS_UPDATE_WORKSPACE_START = 'DESIGNS_UPDATE_WORKSPACE_START';
+export const DESIGNS_UPDATE_WORKSPACE_SUCCESS = 'DESIGNS_UPDATE_WORKSPACE_SUCCESS';
+
+export const DESIGNS_UPDATE_CURRENT_WORKSPACE_START = 'DESIGNS_UPDATE_CURRENT_WORKSPACE_START';
+export const DESIGNS_FORCE_UPDATE_SUCCESS = 'DESIGNS_FORCE_UPDATE_SUCCESS';
+
+export const DESIGNS_UPDATE_MEASUREMENTS_START = 'DESIGNS_UPDATE_MEASUREMENTS_START';
+export const DESIGNS_UPDATE_MEASUREMENTS_SUCCESS = 'DESIGNS_UPDATE_MEASUREMENTS_SUCCESS';
+
+
+export const updateTSLData = (rawTsl) => ({
+  type: DESIGNS_UPDATE_DESIGNDATA_START,
+  rawTsl,
+});
+
+export const clickOnBlock = (id) => ({
+  type: DESIGNS_BLOCK_CLICK_START,
+  id,
+});
+
+export const updateWorkspace = (workspaceOutput) => ({
+  type: DESIGNS_UPDATE_WORKSPACE_START,
+  workspaceOutput,
+});
+export const setForceUpdate = (forceUpdate) => ({
+  type: DESIGNS_FORCE_UPDATE_SUCCESS,
+  forceUpdate,
+});
+export const updateCurrentWorkspace = (workspaceXML) => ({
+  type: DESIGNS_UPDATE_CURRENT_WORKSPACE_START,
+  workspaceXML,
+});
+
+export const updateMeasurementsForDesign = (designId, measurements) => ({
+  type: DESIGNS_UPDATE_MEASUREMENTS_START,
+  designId,
+  measurements,
+});

@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+}
+
+.app {
+  background: #ccc5d6 linear-gradient(to bottom, #dedae5 0%, #f3f2f6 100%);
+
+  &__main {
+    //min-height: 100vh;
+    background-color: $light-grey;
+
+    @at-root .app--private & {
+      padding: ($header-height + $grid-gutter-width) 0 ($footer-height + $grid-gutter-width);
+    }
+  }
+
+  &__container {
+
+  }
+
+  &__route {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh;
+  }
+
+  &__logout {
+    span {
+      margin-right: $grid-gutter-width / 6;
+    }
+  }
+}
+
+p {
+  font-size: $font-size-base;
+  font-weight: 300;
+
+  > b {
+    font-weight: 500;
+  }
+}
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}

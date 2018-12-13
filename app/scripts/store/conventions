@@ -1,0 +1,7 @@
+
+General naming convention from 03.01.2019 for redux sagas
+
+{service_name}{Microservice}{Status}.
+fetchsomedataEventsStart
+fetchsomedataEventsSuccess
+

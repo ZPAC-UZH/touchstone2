@@ -1,0 +1,10 @@
+.optimization {
+  height: 100%;
+
+  &__freely-floating {
+    background-position: green;
+    bottom: 250px;
+    position: absolute;
+    right: 250px;
+  }
+}
