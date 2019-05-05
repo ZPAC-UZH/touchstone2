@@ -1,6 +1,6 @@
 # Touchstone2
 
-Touchstone2 is a web application for designing in controlled experiments. Try out a live server at [touchstone2.org](https://touchstone2.org)
+Touchstone2 is a web application for designing in controlled experiments. Try it out at [touchstone2.org](https://touchstone2.org)
 
 
 ## Requirements
