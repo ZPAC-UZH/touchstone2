@@ -1,6 +1,6 @@
 # Touchstone2
 
-Touchstone2 is a web application for designing in controlled experiments.
+Touchstone2 is a web application for designing in controlled experiments. Try out a live server at [touchstone2.org](https://touchstone2.org)
 
 
 ## Requirements
@@ -27,9 +27,9 @@ Logging is deactivated by default to activate it.
 
 ## Credits
 
-TSL is a work by the [People and Computing Lab (ZPAC) at the University of Zurich](https://zpac.ch) and the [ex)situ lab](https://ex-situ.lri.fr/).
+Touchstone2 is a work by the [People and Computing Lab (ZPAC) at the University of Zurich](https://zpac.ch) and the [ex)situ lab](https://ex-situ.lri.fr/).
 
-If you use or build upon TSL, please cite the following paper.
+If you use or build upon Touchstone2, please cite the following paper.
 
 > Alexander Eiselmayer, Chat Wacharamanotham, Michel BeaudouinLafon, and Wendy E. Mackay. 2019. Touchstone2: An Interactive Environment for Exploring Trade-offs in HCI Experiment Design. In CHI Conference on Human Factors in Computing Systems Proceedings (CHI 2019), May 4–9, 2019, Glasgow, Scotland Uk. ACM, New York, NY, USA, 11 pages. https://doi.org/10.1145/3290605.3300447
 
