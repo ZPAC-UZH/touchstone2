@@ -59,3 +59,10 @@ If you use or build upon Touchstone2, please cite the following paper.
 ## Related project
 
 [Touchstone Language (TSL)](https://github.com/ZPAC-UZH/touchstone-language): A declarative language for counterbalancing design.
+
+## Issues, questions, problems?
+
+Please report them on the [Issues](https://github.com/ZPAC-UZH/touchstone2/issues) page. 
+We will check this once a week until the end of 2019.
+
+
