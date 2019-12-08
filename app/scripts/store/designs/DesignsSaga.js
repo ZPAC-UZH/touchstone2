@@ -20,6 +20,7 @@ import {
 } from './DesignsAction';
 import {getOrCreateData} from './helper';
 import {getDesigns} from './selector';
+import {generateTslWithMeta as tslParser} from 'touchstone-language';
 
 /**
  * This generator function
@@ -33,7 +34,30 @@ const updateDesignData = function* (action) {
   try {
     const currentDesigns = yield select(getDesigns);
     const {rawTsl} = action;
-    const designArrays = rawTsl.split('\n');
+    let designArrays = rawTsl.split('\n');
+
+    const incompleteDesignNames = [];
+
+    designArrays = designArrays.filter(designString => {
+      try {
+        JSON.parse(designString);
+      }
+      catch (e) {
+        return false;
+      }
+
+      const design = JSON.parse(designString);
+
+      try {
+        tslParser(design.tsl, design.numberOfParticipants);
+      }
+      catch (e) {
+        incompleteDesignNames.push(design.designName);
+        return false;
+      }
+      return true;
+    });
+
     const designs = designArrays.map(design => {
       if (!design) {
         return [];
@@ -72,6 +96,21 @@ const updateDesignData = function* (action) {
       type: WORKSPACE_SET_RAWTSL_SUCCESS,
       rawTsl,
     });
+
+    if (incompleteDesignNames.length > 0) {
+      let message = `${incompleteDesignNames.join(' & ')}`;
+      if (incompleteDesignNames.length === 1) {
+        message += ' is incomplete. Complete the design to see its power and trial table.';
+      }
+      else {
+        message += ' are incomplete. Complete the design to see its power and trial table.';
+      }
+
+      yield put({
+        type: WARNING_MESSAGE,
+        message,
+      });
+    }
   }
   catch (err) {
     let message = 'You need to place all the Blocks inside the Workspace. See HELP for more information.';
