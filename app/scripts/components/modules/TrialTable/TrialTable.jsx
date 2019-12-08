@@ -167,6 +167,12 @@ class TrialTable extends React.PureComponent {
         };
         clicked = <span style={style}/>;
       }
+
+      const {color} = item;
+      const designColorIndicator = {
+        borderLeft: `5px solid ${color}`,
+      };
+
       return (
         <div key={item.designName + index}>
           <div className="trial-table__header">
@@ -188,7 +194,7 @@ class TrialTable extends React.PureComponent {
               />
             </div>
           </div>
-          <div className="trial-table__container">
+          <div className="trial-table__container" style={designColorIndicator}>
             {this.extractParticipant(item.trialTable)}
           </div>
         </div>
