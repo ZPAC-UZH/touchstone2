@@ -155,17 +155,11 @@ class TrialTable extends React.PureComponent {
   extractDesigns() {
     const {clickedDesignId, designs} = this.props;
     return designs.map((item, index) => {
-      let clicked = '';
+      let style = {};
       if (item.designId === clickedDesignId) {
-        const style = {
-          width: 0,
-          height: 0,
-          borderTop: '10px solid transparent',
-          borderBottom: '10px solid transparent',
-          borderRight: '10px solid #FFCC33',
-          display: 'inline-block',
+        style = {
+          border: '2px solid rgb(255, 204, 51)',
         };
-        clicked = <span style={style}/>;
       }
 
       const {color} = item;
@@ -176,7 +170,7 @@ class TrialTable extends React.PureComponent {
       return (
         <div key={item.designName + index}>
           <div className="trial-table__header">
-            <p>Design: {item.designName} {clicked}</p>
+            <p style={style}>Design: {item.designName}</p>
             <div>
               <span>Export design:</span>
               <Button
