@@ -195,7 +195,7 @@ class TrialTable extends React.PureComponent {
             </div>
           </div>
           <div className="trial-table__container" style={designColorIndicator}>
-            {this.extractParticipant(item.trialTable)}
+            {this.extractParticipant(item.designId, item.trialTable)}
           </div>
         </div>
       );
@@ -205,10 +205,11 @@ class TrialTable extends React.PureComponent {
 
   /**
    * Extract each participant
+   * @param {string} id - ID of experiment design
    * @param {array} trialTable
    * @return {*}
    */
-  extractParticipant(trialTable) {
+  extractParticipant(id, trialTable) {
     const {fishEyeMode} = this.props;
     return trialTable.map((item, index) => (
       <div
@@ -218,6 +219,7 @@ class TrialTable extends React.PureComponent {
         <TrialColumn
           row={item} trialIdStart={index * item.length}
           fishEyeMode={fishEyeMode}
+          designId={id}
         />
       </div>
     ));
