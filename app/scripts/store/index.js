@@ -10,9 +10,9 @@ import rootSaga from './RootSaga';
 
 const reducer = persistReducer(
   {
-    key: 'touchstonetwo2',
+    key: 'touchstone2-5897',
     storage, // storage is now required
-    blacklist: ['workspace']
+    blacklist: ['workspace'],
   },
   rootReducer,
 );
