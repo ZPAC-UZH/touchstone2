@@ -39,19 +39,20 @@ class TrialEntry extends React.PureComponent {
    * @return {*}
    */
   render() {
-    const {children, fishEyeMode} = this.props;
+    const {children, fishEyeMode, style} = this.props;
     if (!(children instanceof Array)) {
       return (
         <div
           className={this.buildClassName()}
           onClick={(e) => this.highlightClassNames(e)}
+          style={style}
         >
           {children}
         </div>
       );
     }
     else {
-      return children.map((item, index) => <TrialEntry key={`${item}${index}`} fishEyeMode={fishEyeMode}>{item}</TrialEntry>);
+      return children.map((item, index) => <TrialEntry style={style} key={`${item}${index}`} fishEyeMode={fishEyeMode}>{item}</TrialEntry>);
     }
   }
 }
@@ -66,6 +67,7 @@ TrialEntry.propTypes = {
   classNameEntry: PropTypes.string,
   classNameEntryFisheye: PropTypes.string,
   fishEyeMode: PropTypes.bool,
+  style: PropTypes.object,
 };
 
 

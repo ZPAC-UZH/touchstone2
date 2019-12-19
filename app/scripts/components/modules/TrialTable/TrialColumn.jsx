@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import TrialEntry from './TrialEntry';
+import {setHover} from '../../../store/trialTable/TrialTableAction';
+import {connect} from 'react-redux';
+import {throttle} from 'throttle-debounce';
+import {calculatePowerMargin} from '../../../store/power/PowerAction';
 
 /**
  * Visual of the row of a Trial Table
@@ -38,18 +42,44 @@ class TrialColumn extends React.PureComponent {
     });
   }
 
+  getFontSize(idx, hoverIdx) {
+    return 2 - Math.abs(idx-hoverIdx) * 0.2;
+  }
+
+  dispatchSetHover(designId, index) {
+    const {dispatch, hover} = this.props;
+    const {designId: hDesignId, rowIdx: hIndex} = hover;
+    if (designId !== hDesignId || index !== hIndex) {
+      dispatch(setHover(designId, index));
+    }
+  }
+
   extractEntry() {
-    const {row, fishEyeMode} = this.props;
-    return row.map((item, index) => (
-      <div
-        className={this.backgroundColor(index, item)}
-        onClick={() => this.highlightClassNames(item)}
-        key={`column${item}${index}`}
-      >
-        <TrialEntry key={`index${item}${index}`} fishEyeMode={fishEyeMode}>{index + 1 + this.props.trialIdStart}</TrialEntry>
-        <TrialEntry key={`item${index}${item}`} fishEyeMode={fishEyeMode}>{item}</TrialEntry>
-      </div>
-    ));
+    const {row, fishEyeMode, designId, dispatch, hover} = this.props;
+
+    return row.map((item, index) => {
+      let style = {
+      };
+
+      if (!fishEyeMode && designId === hover.designId && Math.abs(index - hover.rowIdx) < 4) {
+        style = {
+          fontSize: `${this.getFontSize(index, hover.rowIdx)}rem`,
+        };
+      }
+
+      return (
+        <div
+          className={this.backgroundColor(index, item)}
+          onClick={() => this.highlightClassNames(item)}
+          onMouseOver={() => this.dispatchSetHover(designId, index)}
+          onMouseLeave={() => dispatch(setHover('', 0))}
+          key={`column${item}${index}`}
+        >
+          <TrialEntry key={`index${item}${index}`} style={style} fishEyeMode={fishEyeMode}>{index + 1 + this.props.trialIdStart}</TrialEntry>
+          <TrialEntry key={`item${index}${item}`} style={style} fishEyeMode={fishEyeMode}>{item}</TrialEntry>
+        </div>
+      );
+    });
   }
 
   /**
@@ -73,10 +103,19 @@ TrialColumn.defaultProps = {
 TrialColumn.propTypes = {
   additionalClasses: PropTypes.string,
   classNameRow: PropTypes.string,
+  designId: PropTypes.string,
+  dispatch: PropTypes.func,
+  fishEyeMode: PropTypes.bool,
+  hover: PropTypes.object,
   row: PropTypes.array,
   trialIdStart: PropTypes.number,
-  fishEyeMode: PropTypes.bool,
 };
 
 
-export default TrialColumn;
+function mapStateToProps(state) {
+  return {
+    hover: state.trialtable.hover,
+  };
+}
+
+export default connect(mapStateToProps)(TrialColumn);
